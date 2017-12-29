@@ -1,0 +1,231 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.photo}}" style='width:100%;height:100%;' class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='index_content'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>一手</text>
+    </view>
+    <navigator url='../screen/screen?cat_id=3&title=一手' class='title_right'>
+      <text>查看更多>></text>
+    </navigator>
+  </view>
+  <!-- 限时秒车团  -->
+  <view class='automobile_commodity'>
+    <view class='commodity_big' wx:for="{{list1}}" wx:key="{{index}}" bindtap="detail" data-pid="{{item.id}}">
+      <view class='commodity_original'>
+        <view>购买价</view>
+        <view>￥{{item.price}}元</view>
+      </view>
+      <view class='commodity_original'>
+        <view>租赁价</view>
+        <view>￥{{item.price_yh}}元</view>
+      </view>
+      <view class='commodity_img'>
+        <image src='{{item.photo_x}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--优质二手车  -->
+<view class='index_content'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>二手</text>
+    </view>
+    <navigator url='../screen/screen?cat_id=4&title=二手' class='title_right'>
+      <text>查看更多>></text>
+    </navigator>
+  </view>
+  <!-- 内容  -->
+  <view class='automobile_commodity'>
+    <view class='commodity_big' wx:for="{{list2}}" wx:key="{{index}}" bindtap="detail" data-pid="{{item.id}}">
+      <view class='used_img'>
+        <image src='{{item.photo_x}}'></image>
+      </view>
+      <view class='used_theme' wx:if="{{item.intro != ''}}">
+        <text>{{item.intro}}</text>
+      </view>
+      <view class='used_title'>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='used_money'>
+        <view>
+          <view >
+            <text>购买价:￥{{item.price}}</text>
+            <text>元</text>
+          </view>
+          <view>
+            <view>租赁价:￥{{item.price_yh}}元</view>
+          </view>
+        </view>
+        <view class='money_button'>
+          <view>立即购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 一成首付购新车  -->
+<!-- <view class='index_content'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>一成首付购新车</text>
+    </view>
+    <navigator  url='../seek/seek?cid=3' class='title_right'>
+      <text>查看更多>></text>
+    </navigator>
+  </view> -->
+  <!-- 内容  -->
+  <!-- <view class='automobile_commodity'>
+    <view class='payment_big' wx:for="{{list3}}" wx:key="{{index}}" bindtap="detail" data-pid="{{item.id}}">
+      <view class='payment_img'>
+        <image src='{{item.photo_x}}'></image>
+      </view>
+      <view class='payment_theme'>
+        <text>分期：{{item.gong}}</text>
+      </view>
+      <view class='used_title'>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='used_money'>
+        <view class='payment_money'>
+          <view>{{item.shiyong}}人付款</view>
+          <view><text style='font-size:25rpx;'>￥</text><text style='font-size:27rpx;'>{{item.price}}</text></view>
+        </view>
+        <view class='money_botton'>
+          <view>立即购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> -->
+<!-- 平时进口、豪车个性化定制  -->
+<view class='index_content'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>配件</text>
+    </view>
+    <navigator url='../screen/screen?cat_id=5&title=配件' class='title_right'>
+      <text>查看更多>></text>
+    </navigator>
+  </view>
+  <!-- 内容  -->
+  <view class='automobile_commodity'>
+    <view class='commodity_big' wx:for="{{list3}}" wx:key="{{index}}" bindtap="detail" data-pid="{{item.id}}">
+      <view class='used_img' style='border:1px solid #ccc;'>
+        <image src='{{item.photo_x}}'></image>
+      </view>
+      <view class='used_money' style='margin-top:12rpx;'>
+        <view class='used_title used_title2' style='margin:0;'>
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+        <text>价格:￥{{item.price}}元</text>
+        </view>
+        <view class='money_botton'>
+          <view >立即购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 供求发布  -->
+ <view class='index_content'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>供求发布</text>
+    </view>
+  </view>
+ 
+  <view class='issue_content' > 
+    <view class='issue_tab' catchtap='tabClick'>
+      <view class="{{tabNum == 0?'active':''}}" data-id='0'>
+        <text style='border-right: 1px solid #999;'data-id='0'>供应</text>
+      </view>
+      <view class="{{tabNum == 1?'active':''}}" data-id='1'>
+        <text data-id='1'>求购</text>
+      </view>
+    </view>
+    <view class='issue_big' wx:for="{{supply}}" wx:key="{{index}}">
+      <view class='issue_img'>
+        <image src='{{item.photo}}'></image>
+      </view>
+      <view class='issue_text'>
+        <view class='issue_text_top'>
+          {{item.content}}
+        </view>
+        <view class="issue_text_bottom">
+          <view>
+            发布时间：{{item.addtime}}
+          </view>
+          <view class='issue_button'>
+            <view bindtap="call" data-phone="{{item.phone}}">电话联系</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
+
+
+
+<!--弹窗-->
+    <view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>    
+  <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+
+  <view class="close_icon" bindtap="setModalStatus" data-status="0">×</view>
+  <view class="drawer_attr_content">
+    <view class="text_center">
+
+        <view class="section">
+           <form bindsubmit="bindFormSubmit" style="position:relative;"> 
+            <textarea fixed="true" placeholder-style='font-size:26rpx;' maxlength='50' placeholder="请输入你需要的内容(限50字)" name="content"/>
+            <view class="" style="position: absolute;bottom:50px;left:20rpx;z-index:333;width:600rpx;height:130rpx;">
+               <view class="abc"> 
+                  <image src="{{item}}" wx:for="{{imgs}}" style="width:130rpx;height:130rpx;margin:0 20rpx 5rpx 0;"></image>
+               </view> 
+            </view>
+            <button bindtap="chooseImage" class="aaa">选择图片</button>
+            <button form-type="submit" class="button">发布供求</button>
+           </form> 
+        </view>
+
+      </view>
+      </view>
+   </view>
+ 
+
+
+<!-- 汽车资讯  -->
+<view class='index_content' style='border-top:10rpx solid #eee;'>
+  <view class='automobile_title'>
+    <view class='title_left'>
+      <text>汽车资讯</text>
+    </view>
+  </view>
+  <!-- 内容  -->
+  <view class='issue_content'> 
+    <view class='issue_big' wx:for="{{news}}" wx:key="{{index}}">
+      <view class='message_img'>
+        <image src='{{item.photo}}'></image>
+      </view>
+      <view class='issue_text' style='font-size:24rpx;color:#666;width:73%;' bindtap="newsDetail" data-id="{{item.id}}">
+        <view class='message_top'>
+          #{{item.name}}#
+        </view>
+        <view class="message_middle">
+          <text>{{item.digest}}</text><text style='color:#ff0000;'>《详情》</text>
+        </view>
+        <view class='message_time'>
+          <text>发布时间：{{item.addtime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,277 @@
+.swiper {
+  height: 320rpx;
+  border-bottom: 10rpx solid #eee; 
+}
+page {
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+}
+.index_content {
+  padding: 20rpx 0 0 0;
+}
+.automobile_title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.title_left {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 5rpx solid #029cdc;
+  padding-bottom: 10rpx;
+}
+.title_right {
+  color: #666;
+  font-weight: 500;
+}
+/*内容  */
+.commodity_original {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5rpx;
+  margin-top: 10rpx;
+}
+.commodity_big {
+  width: 48.6%;
+  padding-bottom: 10rpx;
+  
+}
+.commodity_img {
+  width: 100%;
+  height: 240rpx;
+  padding-bottom: 10rpx; 
+}
+.commodity_img image {
+  width: 100%;
+  height: 100%;
+  margin-top: 10rpx;
+}
+.automobile_commodity {
+  border-bottom: 10rpx solid #eee;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/*二手车  */
+.used_img image {
+  width: 100%;
+  height: 100%;
+}
+.used_img {
+  height: 200rpx;
+}
+.used_theme {
+  background: #f5e700;
+  text-align: center;
+  font-size: 28rpx;
+  padding: 8rpx 0;
+}
+.used_title {
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+  margin: 5rpx 0;
+  /* width: 67%; */
+}
+.used_title2 {
+  width: 67%;
+}
+.money text:first-child {
+  color:#ff0000;
+  font-size:38rpx;
+  font-weight:700;
+}
+.money text:nth-child(2) {
+  font-size:28rpx;
+  font-weight:700;
+}
+.used_money {
+  /* display: flex; */
+  /* justify-content: space-between;
+  align-items: flex-end; */
+}
+.money_button view {
+  background:  #f58500;
+  text-align: center;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.money_botton view {
+  font-size: 22rpx;
+  padding:10rpx 10rpx;
+  background: #f58500;
+  border-radius: 10rpx;
+  color: #fff;
+   text-align: center;
+}
+/*一成首付购新车  */
+.payment_big {
+  width: 32%;
+  padding-bottom: 10rpx;
+}
+.payment_img image {
+  height: 100%;
+  width: 100%;
+}
+.payment_img {
+  width: 100%;
+  height: 138rpx;
+}
+.payment_theme {
+  background: #f5e700;
+  text-align: center;
+  font-size: 26rpx;
+  padding: 8rpx 0;
+}
+.payment_money view:first-child {
+  font-size: 20rpx;
+  color: #666;
+}
+.payment_money view:nth-child(2) {
+  color: #ff0000;
+  font-weight: 700;
+  margin-top: -5rpx;
+}
+.payment_money {
+  margin-bottom: -8rpx;
+}
+/*供求发布  */
+.issue_tab {
+  display: flex;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.issue_tab > view {
+  width: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 34rpx;
+  padding-bottom: 10rpx;
+}
+.issue_tab .active {
+  border-bottom: 1px solid #029cdc;
+}
+.issue_tab > view text {
+  display: inline-block;
+  width: 100%;
+  line-height: 30rpx;
+}
+.issue_img {
+  width: 240rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+}
+.issue_img image {
+  width: 100%;
+  height: 100%;
+}
+.issue_big {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx 20rpx;
+   box-sizing: border-box; 
+}
+.issue_text {
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  width: 65%;
+}
+.issue_text_top {
+  font-size: 27rpx;
+}
+.issue_text_bottom {
+  font-size: 24rpx;
+  color: #999;
+}
+.issue_button view {
+  padding: 10rpx 20rpx;
+  background: #f45c00;
+  border-radius: 10rpx;
+  color: #fff;
+}
+.issue_text_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.issue_content .issue_big:last-child {
+  border-bottom: 0;
+}
+/*汽车资讯  */
+.message_img image {
+  width: 100%;
+  height: 100%;
+}
+.message_img {
+  width: 185rpx;
+  height: 145rpx;
+  margin-right: 20rpx;
+  border: 1px solid #ccc;
+}
+.message_top {
+  font-weight: 700;
+  color: #333;
+}
+.message_time {
+  display: flex;
+  justify-content:  flex-end ; 
+  font-size: 20rpx;
+  color: #666;
+}
+.message_middle {
+  font-size: 23rpx;
+}
+
+/*供求*/
+
+.tab {
+  flex-direction: row;
+  width: 100%;
+}
+
+.tab-left {
+  width: 100%;
+  line-height: 160%;
+  font-size: 34rpx;
+  border-right: solid 1px gray;
+  font-weight: 700;
+}
+
+.tab-left view {
+  text-align: center;
+  display: inline-block;
+  width: 47%;
+}
+
+.tab-left .active {
+  color: #f00;
+  border-bottom: solid 1px red;
+}
+
+.tab-right {
+  line-height: 160%;
+}
+
+.tab-right .right-item {
+  padding-left: 15rpx;
+  display: none;
+}
+
+.tab-right .right-item.active {
+  display: block;
+}
