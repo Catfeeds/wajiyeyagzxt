@@ -28,7 +28,10 @@ Page({
     buy:[],
     sale:[],
     supply:[],
-    news:[]
+    news:[],
+    cname1: '',
+    cname2: '',
+    cname3:'',
   },
   tabClick (e) {
     this.setData({
@@ -95,7 +98,10 @@ Page({
           buy:res.data.buy,
           sale:res.data.sale,
           supply:res.data.sale,
-          news:res.data.news
+          news:res.data.news,
+          cname1: res.data.cname1,
+          cname2: res.data.cname2,
+          cname3:res.data.cname3,
         })
       }
     })

@@ -9,7 +9,7 @@
 <view class='index_content'>
   <view class='automobile_title'>
     <view class='title_left'>
-      <text>一手</text>
+      <text>{{cname1}}</text>
     </view>
     <navigator url='../screen/screen?cat_id=3&title=一手' class='title_right'>
       <text>查看更多>></text>
@@ -36,7 +36,7 @@
 <view class='index_content'>
   <view class='automobile_title'>
     <view class='title_left'>
-      <text>二手</text>
+      <text>{{cname2}}</text>
     </view>
     <navigator url='../screen/screen?cat_id=4&title=二手' class='title_right'>
       <text>查看更多>></text>
@@ -109,7 +109,7 @@
 <view class='index_content'>
   <view class='automobile_title'>
     <view class='title_left'>
-      <text>配件</text>
+      <text>{{cname3}}</text>
     </view>
     <navigator url='../screen/screen?cat_id=5&title=配件' class='title_right'>
       <text>查看更多>></text>
