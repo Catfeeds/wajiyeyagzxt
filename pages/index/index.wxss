@@ -209,9 +209,9 @@ page {
   align-items: flex-end;
   width: 100%;
 }
-.issue_content .issue_big:last-child {
+/* .issue_content .issue_big:last-child {
   border-bottom: 0;
-}
+} */
 /*汽车资讯  */
 .message_img image {
   width: 100%;
@@ -274,4 +274,115 @@ page {
 
 .tab-right .right-item.active {
   display: block;
+}
+
+.one1 {
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.one1 text {
+  padding: 20rpx 250rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #888;
+  background: #ff4040;
+  color: white;
+}
+.pages {
+  font-size: 25rpx;
+  display: inline-block;
+  color: #999;
+  margin-left: 35rpx;
+  width: 44%;
+  position: relative;
+  top: 11rpx;
+  text-align: center;
+}
+/*弹窗*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.close_icon {
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 20rpx;
+  font-size: 30rpx;
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  padding: 10rpx;
+  color: #ccc;
+  border-radius: 50%;
+  text-align: center;
+  background: #fff;
+}
+
+.drawer_attr_content {
+  padding: 20rpx;
+  height: 600rpx;
+  /* overflow-y: scroll; */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #000;
+  background-color: #f8f8f8;
+  width: 43%;
+}
+.aaa {
+  display:inline-block;
+  font-size: 26rpx;
+}
+textarea {
+  border: 1px solid #ccc;
+  margin-bottom: 20rpx;
+  padding: 5rpx;
+  box-sizing:border-box;
+}
+.section textarea {
+  font-size: 30rpx;
+  width: 100%;
+}
+.abc {
+  overflow-x: auto;
+  width: 100%;
+   height: 130rpx; 
 }
