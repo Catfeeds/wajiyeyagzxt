@@ -7,8 +7,8 @@ App({
       userId: 0,
       appId: "",
       appKey: "",
-      // ceshiUrl: 'https://gzleren.com/minirilidiantipjshop/index.php',
-       ceshiUrl: 'http://localhost/miniwajiyeyagzxt/index.php',
+      ceshiUrl: 'https://lerenmobile.com/miniwajiyeyagzxt/index.php',
+      //  ceshiUrl: 'http://localhost/miniwajiyeyagzxt/index.php',
    },
    onLaunch: function () {
        //调用API从本地缓存中获取数据
