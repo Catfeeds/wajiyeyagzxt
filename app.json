@@ -8,6 +8,7 @@
       "pages/news/news",
       "pages/pay/pay",
       "pages/detail/detail",
+      "pages/suplyDetail/suplyDetail",
       "pages/search/search",
       "pages/classify/classify",
       "pages/product/product",

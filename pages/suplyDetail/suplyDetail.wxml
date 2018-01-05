@@ -1,0 +1,11 @@
+<view class='detail'>
+  <view class='detail_title'>
+    <text>{{info.content}}</text>
+  </view>
+  <view class='detail_time'>
+    <text>发布时间：{{info.addtime}}</text>
+  </view>
+  <view class='detail_img'>
+    <image wx:for="{{pictures}}" wx:key="unique"src="{{item}}" data-index="{{index}}" bindtap="previewImage"></image>
+  </view>
+</view>

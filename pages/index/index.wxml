@@ -157,7 +157,7 @@
         <image src='{{item.photo}}'></image>
       </view>
       <view class='issue_text'>
-        <view class='issue_text_top'>
+        <view class='issue_text_top' bindtap='suplyDetail' data-rid="{{item.id}}">
           {{item.content}}
         </view>
         <view class="issue_text_bottom">
@@ -180,7 +180,9 @@
  <view class="pages" bindtap="lastpage" data-ptype="2" wx:if="{{tabNum==1}}">上一页</view> 
  <view class="pages" bindtap="nextpage" data-ptype="2" wx:if="{{tabNum==1}}">下一页</view>
 
- <view class="one1" bindtap="buttonClick" data-status="1" data-dtype="1"><text>我要发布</text></view>
+ <view class="one1" bindtap="buttonClick" data-status="1" data-dtype="1" wx:if="{{tabNum==0}}"><text>我要发布</text></view>
+
+ <view class="one1" bindtap="buttonClick" data-status="1" data-dtype="2" wx:if="{{tabNum==1}}"><text>我要发布</text></view>
 
 
 <!--弹窗-->
@@ -194,10 +196,13 @@
         <view class="section">
            <form bindsubmit="bindFormSubmit" style="position:relative;"> 
             <textarea fixed="true" placeholder-style='font-size:26rpx;' maxlength='50' placeholder="请输入你需要的内容(限50字)" name="content"/>
-            <view class="" style="position: absolute;bottom:50px;left:20rpx;z-index:333;width:600rpx;height:130rpx;">
+            <view class="" style="position: absolute;bottom:15px;left:20rpx;z-index:333;width:600rpx;height:130rpx;">
                <view class="abc"> 
                   <image src="{{item}}" wx:for="{{imgs}}" style="width:130rpx;height:130rpx;margin:0 20rpx 5rpx 0;"></image>
                </view> 
+            </view>
+            <view class='section_input'>
+              <input type='text' placeholder='请输入联系电话' value="{{phone}}" bindinput='getPhone'></input>
             </view>
             <button bindtap="chooseImage" class="aaa">选择图片</button>
             <button form-type="submit" class="button">发布供求</button>

@@ -36,7 +36,11 @@ Page({
     qiupage: 1,
     showModalStatus:false,
     gong:[],
-    qiu:[]
+    qiu:[],
+    phone:'',
+    i:0,
+    photo: '',
+    dtype:0
   },
   // 上传图片
   chooseImage: function () {
@@ -55,10 +59,31 @@ Page({
     })
 
   },
+  getPhone: function (e) {
+    var phone = e.detail.value;
+    this.setData({
+      phone: phone
+    });
+  },
   //我要发布
   bindFormSubmit: function (e) {
     var that = this;
     var content = e.detail.value.content;
+    var phone = that.data.phone;
+    if (!content) {
+      wx.showToast({
+        title: '请输入供求内容！',
+        duration: 2000
+      });
+      return false;
+    }
+    if (!phone) {
+      wx.showToast({
+        title: '请输入联系电话！',
+        duration: 2000
+      });
+      return false;
+    }
     that.setData({
       content: content
     });
@@ -73,7 +98,7 @@ Page({
     var i = that.data.i;
     var length = imageSrc.length;
     wx.uploadFile({
-      url: app.pubData.hostUrl + '/Api/User/uploadimg',
+      url: app.d.ceshiUrl + '/Api/User/uploadimg',
       filePath: imageSrc[i],
       name: 'data',
       success: function (res) {
@@ -98,10 +123,18 @@ Page({
   save: function () {
     var that = this;
     var content = that.data.content;
+    var phone = that.data.phone;
     var dtype = that.data.dtype;
     if (!content) {
       wx.showToast({
         title: '请输入供求内容！',
+        duration: 2000
+      });
+      return false;
+    }
+    if (!phone) {
+      wx.showToast({
+        title: '请输入联系电话！',
         duration: 2000
       });
       return false;
@@ -115,12 +148,13 @@ Page({
       return false;
     }
     wx.request({
-      url: app.pubData.hostUrl + '/Api/User/supply',
+      url: app.d.ceshiUrl + '/Api/User/supply',
       method: 'post',
       data: {
         content: content,
+        phone:phone,
         dtype: dtype,
-        uid: app.pubData.userId,
+        uid: app.d.userId,
         photo_x: that.data.photo
       },
       header: {
@@ -139,10 +173,11 @@ Page({
             img_save: '',
             i: 0,
             photo: '',
+            phone: '',
             content: '',
             showModalStatus: false
           });
-          that.initIndexData();
+          that.onShow();
         } else {
           wx.showToast({
             title: res.data.err,
@@ -200,8 +235,10 @@ Page({
   },
 
   buttonClick (e) {
+    var dtype = e.currentTarget.dataset.dtype;
     this.setData({
-      showModalStatus: true
+      showModalStatus: true,
+      dtype: dtype
     })
   },
   setModalStatus (e) {
@@ -430,6 +467,13 @@ Page({
           duration: 2000
         });
       },
+    })
+  },
+
+  suplyDetail: function (e) {
+    var rid = e.currentTarget.dataset.rid;
+    wx.navigateTo({
+      url: '../suplyDetail/suplyDetail?rid=' + rid,
     })
   },
 
