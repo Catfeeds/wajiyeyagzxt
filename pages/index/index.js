@@ -40,7 +40,7 @@ Page({
     phone:'',
     i:0,
     photo: '',
-    dtype:0
+    dtype:0,
   },
   // 上传图片
   chooseImage: function () {
@@ -316,7 +316,8 @@ Page({
           cname3:res.data.cname3,
           supply: res.data.gong,
           gong:res.data.gong,
-          qiu:res.data.qiu
+          qiu:res.data.qiu,
+          tabNum:0
         })
       }
     })
