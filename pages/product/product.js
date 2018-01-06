@@ -447,6 +447,7 @@ Page({
            return false;
        }
        var ptype = e.currentTarget.dataset.type;
+       var btype = e.currentTarget.dataset.btype;
        wx.request({
          url: app.d.ceshiUrl + '/Api/Shopping/add',
          method:'post',
@@ -456,6 +457,7 @@ Page({
            ppid: that.data.ppid,
            num: buynum,
            ptype: ptype,
+           btype: btype
          },
          header: {
            'Content-Type':  'application/x-www-form-urlencoded'

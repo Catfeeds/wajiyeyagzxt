@@ -15,19 +15,32 @@
       <text>查看更多>></text>
     </navigator>
   </view>
-  <!-- 限时秒车团  -->
+  <!-- 内容  -->
   <view class='automobile_commodity'>
     <view class='commodity_big' wx:for="{{list1}}" wx:key="{{index}}" bindtap="detail" data-pid="{{item.id}}">
-      <view class='commodity_original'>
-        <view>购买价</view>
-        <view>￥{{item.price}}元</view>
-      </view>
-      <view class='commodity_original'>
-        <view>租赁价</view>
-        <view>￥{{item.price_yh}}元</view>
-      </view>
-      <view class='commodity_img'>
+      <view class='used_img'>
         <image src='{{item.photo_x}}'></image>
+      </view>
+      <view class='used_theme' wx:if="{{item.intro != ''}}">
+        <text>{{item.intro}}</text>
+      </view>
+      <view class='used_title'>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='used_money'>
+        <view>
+          <view >
+            <text>购买价:￥{{item.price}}</text>
+            <text>元</text>
+          </view>
+          <view>
+            <view>租赁价:￥{{item.price_yh}}元</view>
+          </view>
+        </view>
+        <view class='money_button'>
+          <view>立即购买</view>
+          <view>立即租赁</view>
+        </view>
       </view>
     </view>
   </view>
@@ -66,6 +79,7 @@
         </view>
         <view class='money_button'>
           <view>立即购买</view>
+           <view>立即租赁</view>
         </view>
       </view>
     </view>

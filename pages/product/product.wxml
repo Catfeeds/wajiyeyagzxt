@@ -28,13 +28,17 @@
 
  <view > 
     <view style="margin-top:10rpx;">
-      <span class="jiage">
-             ¥:{{prodetail2.price_yh}} 
-      <text class="yuan">￥{{prodetail2.price}}</text>
-      </span>
-      <span class="c6 fl_r font_14" style='color:#ccc'>
+      <view class="jiage">
+             购买价:¥:{{prodetail2.price}} 
+      <!-- <text class="yuan">￥{{prodetail2.price}}</text> -->
+      </view>
+      <view class="jiage" wx:if="{{prodetail2.cid != 5}}">
+             租赁价:¥:{{prodetail2.price_yh}} 
+      <!-- <text class="yuan">￥{{prodetail2.price}}</text> -->
+      </view>
+      <!-- <span class="c6 fl_r font_14" style='color:#ccc'>
                     库存：{{prodetail2.store}}
-      </span>
+      </span> -->
     </view>
   </view>
   <!--劵-->
@@ -268,8 +272,9 @@
 
   <!--加入-->
   <view class="right">
-    <view class="right_a" data-type="addcart"  bindtap="addShopCart">加入购物车</view>
-    <view class="right_b" bindtap="addShopCart" data-type="buynow" data-status="1">立刻购买</view>
+    <!-- <view class="right_a" data-type="addcart"  bindtap="addShopCart">加入购物车</view> -->
+    <view class="right_a" bindtap="addShopCart" data-type="buynow" data-status="1" data-btype='1'>立刻购买</view>
+     <view class="right_b" bindtap="addShopCart" data-type="buynow" data-status="1" data-btype='2' wx:if="{{prodetail2.cid != 5}}">立刻租赁</view>
   </view>
 
   <!--底部-->
