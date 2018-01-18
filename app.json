@@ -17,7 +17,8 @@
       "pages/address/address",
       "pages/address/user-address/user-address",
       "pages/category/category",
-      "pages/logs/logs"
+      "pages/logs/logs",
+      "pages/synopsis/synopsis"
    ],
    "window": {
       "backgroundTextStyle": "light",

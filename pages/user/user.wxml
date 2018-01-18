@@ -41,6 +41,16 @@
     </navigator>
     </view>
 
+    <view class="qbdd mt10" bindtap="powerDrawer" >
+    <navigator class="qb" url="../synopsis/synopsis?wedId=2">
+  <view class="">
+      <image class="shuoming" src="../../images/us.png"></image> 
+  </view>
+     <span class="font_14 c3">联系我们</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span >
+    </navigator>
+    </view>
+
 
 <view class="xian"></view>
 

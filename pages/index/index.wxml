@@ -172,7 +172,7 @@
       </view>
       <view class='issue_text'>
         <view class='issue_text_top' bindtap='suplyDetail' data-rid="{{item.id}}">
-          {{item.content}}
+          {{item.content != null?item.content:''}}
         </view>
         <view class="issue_text_bottom">
           <view>

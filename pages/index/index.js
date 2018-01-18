@@ -46,7 +46,7 @@ Page({
   chooseImage: function () {
     var that = this
     wx.chooseImage({
-      count: 9,
+      count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -70,9 +70,10 @@ Page({
     var that = this;
     var content = e.detail.value.content;
     var phone = that.data.phone;
-    if (!content) {
+    var imageSrc = that.data.imgs;
+    if (!content && !imageSrc) {
       wx.showToast({
-        title: '请输入供求内容！',
+        title: '请填内容或图片！',
         duration: 2000
       });
       return false;
@@ -95,43 +96,44 @@ Page({
   upload: function () {
     var that = this;
     var imageSrc = that.data.imgs;
-    var i = that.data.i;
-    var length = imageSrc.length;
-    wx.uploadFile({
-      url: app.d.ceshiUrl + '/Api/User/uploadimg',
-      filePath: imageSrc[i],
-      name: 'data',
-      success: function (res) {
-        console.log('uploadImage success, res is:', res);
-        that.setData({
-          photo: that.data.photo.concat(res.data) + ',',
-          i: that.data.i + 1,
-        })
-        if (that.data.i < length) {
-          that.upload();
-        } else {
-          that.save();
-        }
-      },
+    
+    if (!imageSrc){
+      that.save();
+    }else{
+      var i = that.data.i;
+      var length = imageSrc.length;
 
-      fail: function ({ errMsg }) {
-        console.log('uploadImage fail, errMsg is', errMsg)
-        return false;
-      }
-    })
+      wx.uploadFile({
+        url: app.d.ceshiUrl + '/Api/User/uploadimg',
+        filePath: imageSrc[i],
+        name: 'data',
+        success: function (res) {
+          console.log('uploadImage success, res is:', res);
+          that.setData({
+            photo: that.data.photo.concat(res.data) + ',',
+            i: that.data.i + 1,
+          })
+          if (that.data.i < length) {
+            that.upload();
+          } else {
+            that.save();
+          }
+        },
+
+        fail: function ({ errMsg }) {
+          console.log('uploadImage fail, errMsg is', errMsg)
+          return false;
+        }
+      })
+    }
+    
   },
   save: function () {
     var that = this;
     var content = that.data.content;
     var phone = that.data.phone;
     var dtype = that.data.dtype;
-    if (!content) {
-      wx.showToast({
-        title: '请输入供求内容！',
-        duration: 2000
-      });
-      return false;
-    }
+    
     if (!phone) {
       wx.showToast({
         title: '请输入联系电话！',
